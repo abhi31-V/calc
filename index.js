@@ -7,12 +7,19 @@ for(item of but)
     {
 
        bt=e.target.innerText;
+       
      if(bt=='X')
      {
          bt='*';
          s+=bt;
-         r.value=s;
-
+    
+if(s.length>12)
+{
+    r.value='limit exceed';
+}
+else{
+    r.value=s;
+}
      }
      else if(bt=='C'){
          s=''
@@ -20,7 +27,7 @@ for(item of but)
 
 
      }
-           else if(bt=='d')
+     else if(bt=='d')
      {
     
         s= s.slice(0,-1)
@@ -30,12 +37,25 @@ for(item of but)
      else if(bt=='=')
      {
          s=eval(s)
-         r.value=s
+         if(s.length>12)
+         {
+             r.value='limit exceed';
+         }
+         else{
+             r.value=s;
+         }
 
      }
+     
      else{
          s+=bt;
-         r.value=s;
+         if(s.length>12)
+{
+    r.value='limit exceed';
+}
+else{
+    r.value=s;
+}
      }
     })
 }
