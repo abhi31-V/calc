@@ -20,6 +20,13 @@ for(item of but)
 
 
      }
+           else if(bt=='d')
+     {
+    
+        s= s.slice(0,-1)
+      
+         r.value=s;
+     }
      else if(bt=='=')
      {
          s=eval(s)
